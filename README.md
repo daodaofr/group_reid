@@ -17,7 +17,7 @@ To train the model, please run
     
 To evaluate the trained model, run
     
-    python main_group_gcn_siamese_relative_part_1.py --evaluate True --gpu-devices 0 --pretrained-model ./log1/checkpoint_ep300.pth.tar
+    python main_group_gcn_siamese_relative_part_1.py --data-root [data path] --evaluate True --gpu-devices 0 --pretrained-model ./log1/checkpoint_ep300.pth.tar
 
 ### Performance
 |Task|Rank1 | mAP | 
