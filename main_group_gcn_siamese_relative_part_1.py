@@ -57,6 +57,8 @@ parser.add_argument('--htri-only', action='store_true', default=False,
                     help="if this is True, only htri loss is used in training")
 parser.add_argument('--xent-only', type=bool, default=False,
                     help="if this is True, only xent loss is used in training")
+parser.add_argument('--data-root', type=str, default='/raid/yy1/data/cuhk/Image/SSM', help='root path of the images')
+
 # Architecture
 parser.add_argument('-a', '--arch', type=str, default='resnet50gcn_siamese_relative_part_1', help="resnet503d, resnet50tp, resnet50ta, resnetrnn")
 parser.add_argument('--pool', type=str, default='avg', choices=['avg', 'max'])
@@ -125,7 +127,7 @@ def main():
     train_file = 'data/cuhk_train.pkl'
     test_file = 'data/cuhk_test.pkl'
     gallery_file = 'data/cuhk_gallery.pkl'
-    data_root = '/raid/yy1/data/cuhk/Image/SSM'
+    data_root = args.data_root
     dataset_train = CUHKGroup(train_file, data_root, True, transform_train, transform_train_p)
     dataset_test = CUHKGroup(test_file, data_root, False, transform_test, transform_test_p)
     dataset_query = CUHKGroup(test_file, data_root, False, transform_test, transform_test_p)
