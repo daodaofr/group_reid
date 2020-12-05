@@ -17,8 +17,8 @@ To train and evaluate the model, please run
 ### Performance
 |Task|Rank1 | mAP | Link |
 |-----|------|-----|------|
-|Group re-id| 65.7%|65.7%| [[Google]](https://drive.google.com/open?id=1nlnuYfGNuHWZztQHXwVZSL_FvfE551pA)|
-|Person re-id|69.4|68.5| [[Baidu]](https://pan.baidu.com/s/1Ifgn0Y_JZE65_qSrQM2l-Q)|
+|Group re-id| 65.7%|65.7%| [[Google]](https://drive.google.com/file/d/1j6r4-Fu2FyfE5LHeWrTcFm3xl92t8Lnp/view?usp=sharing)|
+|Person re-id|69.4%|68.5%| [[Baidu]](https://pan.baidu.com/s/1Ifgn0Y_JZE65_qSrQM2l-Q)|
 
 ### Acknowledgements
 Our code is developed based on Video-Person-ReID (https://github.com/jiyanggao/Video-Person-ReID). 
