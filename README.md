@@ -10,15 +10,21 @@ Original dataset webpage: [CUHK-SYSU Person Search Dataset](http://www.ee.cuhk.e
 
 
 ### Usage
-To train and evaluate the model, please run
+To train the model, please run
 
     sh run_train_test.sh
+    
+To evaluate the trained model, run
+    
+    python main_group_gcn_siamese_relative_part_1.py --evaluate True --gpu-devices 0 --pretrained-model ./log1/checkpoint_ep300.pth.tar
 
 ### Performance
-|Task|Rank1 | mAP | Link |
-|-----|------|-----|------|
-|Group re-id| 65.7%|65.7%| [[Google]](https://drive.google.com/file/d/1j6r4-Fu2FyfE5LHeWrTcFm3xl92t8Lnp/view?usp=sharing)|
-|Person re-id|69.4%|68.5%| [[Baidu]](https://pan.baidu.com/s/1Ifgn0Y_JZE65_qSrQM2l-Q)|
+|Task|Rank1 | mAP | 
+|-----|------|-----|
+|Group re-id| 65.7%|65.7%| 
+|Person re-id|69.4%|68.5%| 
+
+Link: [[Google]](https://drive.google.com/file/d/1j6r4-Fu2FyfE5LHeWrTcFm3xl92t8Lnp/view?usp=sharing) [[Baidu]]
 
 ### Acknowledgements
 Our code is developed based on Video-Person-ReID (https://github.com/jiyanggao/Video-Person-ReID). 
