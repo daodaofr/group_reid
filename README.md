@@ -1,5 +1,5 @@
 ## Introduction
-This repo contains the codebase of our [TPAMI 2020 paper](https://ieeexplore.ieee.org/document/9233968).
+This repo contains the codebase of our [TPAMI 2020 paper](https://ieeexplore.ieee.org/document/9233968): Learning Multi-Attention Context Graph for Group-Based Re-Identification.
 
 ## Installation
 We use python 3.7 and pytorch=1.0.1 torchvision=0.2.1
