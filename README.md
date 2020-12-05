@@ -10,12 +10,15 @@ Original dataset webpage: [CUHK-SYSU Person Search Dataset](http://www.ee.cuhk.e
 
 
 ### Usage
-To train the model, please run
+To train and evaluate the model, please run
 
-    sh run_hypergraphsage_part.sh
+    sh run_train_test.sh
 
 ### Performance
-Normaly the model achieves 85.8%  mAP and 89.5% rank-1 accuracy. According to my training log, the best model achieves 86.2% mAP and 90.0% top-1 accuracy. This may need adjustion in hyperparameters.
+|Task|Rank1 | mAP | Link |
+|-----|------|-----|------|
+|Group re-id| 65.7%|65.7%| [[Google]](https://drive.google.com/open?id=1nlnuYfGNuHWZztQHXwVZSL_FvfE551pA)|
+|Person re-id|69.4|68.5| [[Baidu]](https://pan.baidu.com/s/1Ifgn0Y_JZE65_qSrQM2l-Q)|
 
 ### Acknowledgements
 Our code is developed based on Video-Person-ReID (https://github.com/jiyanggao/Video-Person-ReID). 
