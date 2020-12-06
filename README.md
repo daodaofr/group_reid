@@ -25,7 +25,7 @@ To evaluate the trained model, run
 |Group re-id| 65.7%|65.7%| 
 |Person re-id|69.4%|68.5%| 
 
-Link of the trained model: [[Google]](https://drive.google.com/file/d/1j6r4-Fu2FyfE5LHeWrTcFm3xl92t8Lnp/view?usp=sharing) [[Baidu]]
+Link of the trained model: [[Google]](https://drive.google.com/file/d/1j6r4-Fu2FyfE5LHeWrTcFm3xl92t8Lnp/view?usp=sharing)
 
 ### Acknowledgements
 Our code is developed based on Video-Person-ReID (https://github.com/jiyanggao/Video-Person-ReID). 
