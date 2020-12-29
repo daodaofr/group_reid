@@ -1,4 +1,4 @@
-These file contains the group annotations. Each file contains a list with four elements, each element is a list.
+These files contain the group annotations. Each file contains a list with four elements, each element is a list.
 The four elements contains image names, group id, person ids, and person bounding boxes:
 
 
