@@ -16,6 +16,8 @@ To train the model, please run
 
     python main_group_gcn_siamese_part_half_fulltest_sink.py --data-root [data path] --max-epoch 300 --stepsize 100 --eval-step 300 --gpu-devices 0
     
+An example can be find in run_train_test.sh
+
 To evaluate the trained model, run
     
     python main_group_gcn_siamese_part_half_fulltest_sink.py --data-root [data path] --evaluate True --gpu-devices 0 --pretrained-model [model path]
