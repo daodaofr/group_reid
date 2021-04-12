@@ -14,17 +14,17 @@ The group annotation files are in ./data
 ### Usage
 To train the model, please run
 
-    sh run_train_test.sh
+    python main_group_gcn_siamese_part_half_fulltest_sink.py --data-root [data path] --max-epoch 300 --stepsize 100 --eval-step 300 --gpu-devices 0
     
 To evaluate the trained model, run
     
-    python main_group_gcn_siamese_relative_part_1.py --data-root [data path] --evaluate True --gpu-devices 0 --pretrained-model ./log1/checkpoint_ep300.pth.tar
+    python main_group_gcn_siamese_part_half_fulltest_sink.py --data-root [data path] --evaluate True --gpu-devices 0 --pretrained-model ./log1/checkpoint_ep300.pth.tar
 
 ### Performance
 |Task|Rank1 | mAP | 
 |-----|------|-----|
-|Group re-id| 65.7%|65.7%| 
-|Person re-id|69.4%|68.5%| 
+|Group re-id| 65.5%|67.0%| 
+|Person re-id|65.1%|64.2%| 
 
 Link of the trained model: [[Google]](https://drive.google.com/file/d/1j6r4-Fu2FyfE5LHeWrTcFm3xl92t8Lnp/view?usp=sharing)
 
