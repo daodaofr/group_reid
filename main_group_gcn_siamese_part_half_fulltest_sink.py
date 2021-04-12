@@ -57,9 +57,13 @@ parser.add_argument('--htri-only', action='store_true', default=False,
                     help="if this is True, only htri loss is used in training")
 parser.add_argument('--xent-only', type=bool, default=False,
                     help="if this is True, only xent loss is used in training")
+parser.add_argument('--data-root', type=str, default='/raid/yy1/data/cuhk/Image/SSM', help='root path of the images')
+
 # Architecture
 parser.add_argument('-a', '--arch', type=str, default='resnet50gcn_siamese_part_half_sink', help="resnet503d, resnet50tp, resnet50ta, resnetrnn")
 parser.add_argument('--pool', type=str, default='avg', choices=['avg', 'max'])
+parser.add_argument('--pretrained-model', type=str, default='', help='for test')
+
 
 # Miscs
 parser.add_argument('--print-freq', type=int, default=100, help="print frequency")
@@ -120,10 +124,10 @@ def main():
         T.ToTensor(),
         T.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])
-    train_file = 'data/cuhk_train_noise.pkl'
-    test_file = 'data/cuhk_test_noise.pkl'
+    train_file = 'data/cuhk_train.pkl'
+    test_file = 'data/cuhk_test.pkl'
     gallery_file = 'data/cuhk_gallery.pkl'
-    data_root = '/home/yy1/data/cuhk/Image/SSM'
+    data_root = args.data_root
     dataset_train = CUHKGroup(train_file, data_root, True, transform_train, transform_train_p)
     dataset_test = CUHKGroup(test_file, data_root, False, transform_test, transform_test_p)
     dataset_query = CUHKGroup(test_file, data_root, False, transform_test, transform_test_p)
@@ -175,6 +179,15 @@ def main():
 
     #criterion_xent = CrossEntropyLabelSmooth(num_classes=dataset_train.num_train_gids, use_gpu=use_gpu)
     #criterion_xent_person = CrossEntropyLabelSmooth(num_classes=dataset_train.num_train_pids, use_gpu=use_gpu)
+    
+    if os.path.exists(args.pretrained_model):
+        print("Loading checkpoint from '{}'".format(args.pretrained_model))
+        checkpoint = torch.load(args.pretrained_model)
+        model_dict = model.state_dict()
+        pretrain_dict = checkpoint['state_dict']
+        pretrain_dict = {k:v for k, v in pretrain_dict.items() if k in model_dict}
+        model_dict.update(pretrain_dict)
+        model.load_state_dict(model_dict)
 
     criterion_xent = nn.CrossEntropyLoss(ignore_index=-1)
     criterion_xent_person = nn.CrossEntropyLoss(ignore_index=-1)
