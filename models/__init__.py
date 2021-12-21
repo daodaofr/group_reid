@@ -5,7 +5,7 @@ from .ResNetGcn_siamese_part_half_sink import *
 
 
 __factory = {
-    'resnet50gcn_siamese_relative_part_1': ResNet50Gcn_siamese_relative_part_1，
+    'resnet50gcn_siamese_relative_part_1': ResNet50Gcn_siamese_relative_part_1,
     'resnet50gcn_siamese_part_half_sink': ResNet50Gcn_siamese_part_half_sink
 }
 
