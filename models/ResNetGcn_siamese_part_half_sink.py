@@ -10,7 +10,7 @@ import torchvision
 import random
 import math
 __all__ = ['ResNet50Gcn_siamese_part_half_sink']
-from .resnet import ResNet, BasicBlock, Bottleneck, ResNetNonLocal
+#from .resnet import ResNet, BasicBlock, Bottleneck, ResNetNonLocal
 
 class Sinkhorn(nn.Module):
     """
