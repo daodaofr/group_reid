@@ -45,7 +45,8 @@ def relabel_gid(labels):
     new_label = []
     for label in labels:
         new_label.append(labels_all.index(label))
-    class_g = len(new_label)
+    #class_g = len(new_label)
+    class_g = len(labels_all)
     return new_label, class_g
 
 class CUHKGroup(object):
